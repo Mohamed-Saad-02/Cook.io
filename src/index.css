@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Default Style */
+:root {
+  --light-background: hsl(0, 0%, 96%);
+  --light-on-background: hsl(0, 3%, 13%);
+  --light-on-background-variant: hsl(20, 3%, 19%);
+  --light-primary: hsl(11, 87%, 59%);
+  --light-primary-hover: hsl(11, 60%, 50%);
+  --light-primary-container: hsl(14, 57%, 95%);
+  --light-error: hsl(1, 73%, 42%);
+  --light-active-indicator: hsl(12, 58%, 88%);
+  --light-image-background: hsl(0, 0%, 70%);
+  --light-badge-btn: hsl(30, 58%, 88%);
+  --light-on-badge-btn: hsl(24, 7%, 14%);
+  --light-outline: hsl(10, 19%, 88%);
+  --light-input-outline: hsl(7, 7%, 73%);
+  --light-input-outline-hover: hsl(9, 3%, 52%);
+  --light-alpha-10: hsla(0, 0%, 0%, 0.1);
+  --light-alpha-20: hsla(0, 0%, 0%, 0.2);
+}
+
+::selection {
+  background-color: var(--light-primary);
+}
+
+::-webkit-scrollbar {
+  transition: 0.5s;
+  height: 10px;
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+  transition: 0.5s;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: transparent;
+  border-radius: 8px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: var(--light-primary);
+}
+
+.filter-items::-webkit-scrollbar {
+  width: 7px;
+}
+
+.country-recipes .recipes:is(:hover)::-webkit-scrollbar-thumb,
+.filter-items:is(:hover)::-webkit-scrollbar-thumb,
+.recipes-items:is(:hover)::-webkit-scrollbar-thumb {
+  background-color: var(--light-primary);
+}
+
+.grid-col-6 {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+
+/* Home */
+nav ul li a.active,
+.food ul li.active {
+  opacity: 1;
+}
+
+nav ul li a.active::before,
+.food ul li.active::before {
+  width: 100%;
+}
+
+.food ul li {
+  width: calc(100% / 5);
+}
+
+@media (max-width: 767px) {
+  .food ul li {
+    width: calc(100% / 2);
+  }
+}
+
+/* Recipe */
+.recipe:hover h2 {
+  color: var(--light-primary);
+}
+
+/* Detail */
+.details .info .results > div {
+  width: calc(100% / 3);
+}
+
+.filter-items,
+.recipes-items {
+  height: calc(100vh - 5rem);
+}
