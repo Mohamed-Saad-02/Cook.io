@@ -39,7 +39,7 @@ function DetailRecipe() {
                 <img
                   src={image}
                   alt={label}
-                  className="w-full opacity-0 xl:h-full"
+                  className="min-h-80 w-full opacity-0 xl:h-full"
                   loading="lazy"
                   onLoad={handleLoadImage}
                   draggable="false"

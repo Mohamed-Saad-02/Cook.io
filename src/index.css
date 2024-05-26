@@ -31,6 +31,11 @@
   height: 10px;
   width: 10px;
 }
+@media (max-width: 767px) {
+  ::-webkit-scrollbar {
+    width: 0;
+  }
+}
 
 ::-webkit-scrollbar-track {
   background-color: transparent;
@@ -61,16 +66,36 @@ body::-webkit-scrollbar-thumb {
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
 }
 
-/* Home */
-nav ul li a.active,
+/* Nav */
+@media (min-width: 768px) {
+  nav ul li a.active {
+    opacity: 1;
+  }
+
+  nav ul li a.active::before {
+    width: 100%;
+  }
+}
+
 .food ul li.active {
   opacity: 1;
 }
 
-nav ul li a.active::before,
 .food ul li.active::before {
   width: 100%;
 }
+
+@media (max-width: 767px) {
+  nav ul li a.active .icon {
+    background-color: var(--light-badge-btn);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    font-size: 18px;
+  }
+}
+
+/* Home */
 
 .food ul li {
   width: calc(100% / 5);
@@ -92,7 +117,12 @@ nav ul li a.active::before,
   width: calc(100% / 3);
 }
 
-.filter-items,
 .recipes-items {
   height: calc(100vh - 5rem);
+}
+
+@media (min-width: 1024px) {
+  .filter-items {
+    height: calc(100vh - 5rem);
+  }
 }

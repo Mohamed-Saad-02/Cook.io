@@ -6,8 +6,8 @@ const year = date.getFullYear();
 
 function Footer() {
   return (
-    <footer className="px-12">
-      <div className="flex flex-wrap items-center justify-center gap-y-3 border-t border-t-light-outline py-3 sm:justify-between">
+    <footer className="mb-[70px] px-12 md:mb-0">
+      <div className="flex flex-wrap items-center justify-around gap-y-3 border-t border-t-light-outline py-3 sm:justify-between md:justify-between">
         <a
           href="https://www.linkedin.com/in/mohamed-saad-025268304/"
           target="_blank"
