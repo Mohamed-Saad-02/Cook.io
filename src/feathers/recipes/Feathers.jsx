@@ -1,4 +1,6 @@
+import PropTypes from "prop-types";
 import { useCallback, useEffect, useRef } from "react";
+import { useDispatch } from "react-redux";
 import Calories from "./Filter option/Calories";
 import CookingTime from "./Filter option/CookingTime";
 import Cuisine from "./Filter option/Cuisine";
@@ -8,9 +10,8 @@ import Health from "./Filter option/Health";
 import Ingredients from "./Filter option/Ingredients";
 import Meal from "./Filter option/Meal";
 import actGetRecipesSearch from "../../redux/slices/search recipes/actSearchRecipes";
-import { useDispatch } from "react-redux";
 
-function Feathers() {
+function Feathers({ isActiveFilter, handleActiveFilter }) {
   const selectedTags = useRef({});
   const clearBtn = useRef(null);
   const fetchFilterRecipes = useRef(null);
@@ -43,7 +44,9 @@ function Feathers() {
         queries: `${time && `&time=${time}`}${ingr && `&ingr=${ingr}`}${calories && `&calories=${calories}`}${diet && `&diet=${diet}`}${health && `&health=${health}`}${mealType && `&mealType=${mealType}`}${dishType && `&dishType=${dishType}`}${cuisineType && `&cuisineType=${cuisineType}`}`,
       }),
     );
-  }, [dispatch]);
+
+    if (isActiveFilter) handleActiveFilter();
+  }, [dispatch, isActiveFilter]);
 
   useEffect(() => {
     const buttonFilterFetch = fetchFilterRecipes.current;
@@ -98,3 +101,8 @@ function Feathers() {
 }
 
 export default Feathers;
+
+Feathers.propTypes = {
+  isActiveFilter: PropTypes.bool,
+  handleActiveFilter: PropTypes.func,
+};

@@ -30,7 +30,7 @@ function App() {
         position="bottom-left"
         gutter={2}
         toastOptions={{
-          className: "bg-light-badge-btn ml-8 mb-4",
+          className: "bg-light-badge-btn md:ml-8 ml-4 md:mb-4 mb-16",
           duration: 3000,
           error: { duration: 5000 },
         }}

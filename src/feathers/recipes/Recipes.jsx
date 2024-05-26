@@ -18,7 +18,10 @@ function Recipes() {
         activeFilter={activeFilter}
         handleActiveFilter={handleActiveFilter}
       >
-        <Feathers />
+        <Feathers
+          isActiveFilter={activeFilter}
+          handleActiveFilter={handleActiveFilter}
+        />
       </FilterRecipes>
       <RecipesItems>
         <HeaderFilterItems isActiveFilter={handleActiveFilter} />
