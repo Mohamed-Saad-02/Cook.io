@@ -1,20 +1,20 @@
 import PropTypes from "prop-types";
 
 import { IoBookmark, IoBookmarkOutline } from "react-icons/io5";
-import Button from "./Button";
 import useSaveRecipe from "../../hooks/useSaveRecipe";
 
 function ButtonSaveRecipe({ id, recipe, link, kind = "", type = "" }) {
   const { handleSaveRecipe, isFound } = useSaveRecipe(id, recipe, link);
 
   return (
-    <Button
+    <button
       kind={kind}
-      className={
+      aria-label="Save Recipes"
+      className={`${
         type === "icon"
           ? "ml-auto p-1 text-xl"
           : "flex items-center gap-x-2 px-3 py-2"
-      }
+      } rounded bg-light-active-indicator transition-all duration-300 hover:bg-light-primary hover:text-white`}
       onClick={handleSaveRecipe}
     >
       {!isFound ? (
@@ -28,7 +28,7 @@ function ButtonSaveRecipe({ id, recipe, link, kind = "", type = "" }) {
           {type !== "icon" && <span className="font-medium">UnSave</span>}
         </>
       )}
-    </Button>
+    </button>
   );
 }
 

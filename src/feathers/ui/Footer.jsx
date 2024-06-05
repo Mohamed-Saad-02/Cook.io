@@ -22,7 +22,7 @@ function Footer() {
           Cook.io
         </div>
         <a href="https://www.edamam.com/">
-          <img src={image} alt="edamam" loading="lazy" />
+          <img src={image} alt="edamam" loading="lazy" className="w-full" />
         </a>
       </div>
     </footer>

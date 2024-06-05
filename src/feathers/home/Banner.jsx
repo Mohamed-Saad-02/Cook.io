@@ -5,7 +5,6 @@ import { GiKnifeFork } from "react-icons/gi";
 import { IoSearchSharp } from "react-icons/io5";
 import { getQuery } from "../../redux/slices/search recipes/searchRecipesSlice";
 import image from "../../../public/hero-banner-large.jpg";
-import Button from "../ui/Button";
 
 function Banner() {
   const inputSearch = useRef();
@@ -34,12 +33,13 @@ function Banner() {
           className="h-14 w-[300px] rounded-sm border-none bg-light-background pl-10 pr-2 text-light-on-background outline-none sm:w-[500px] md:w-[600px]"
         />
         <GiKnifeFork className="absolute left-2 top-1/2 -translate-y-1/2 text-xl text-light-on-background" />
-        <Button
-          className="absolute right-2 top-1/2 -translate-y-1/2 px-5 py-3 text-xl text-white"
+        <button
+          aria-label="Search Recipes"
+          className="absolute right-2 top-1/2 flex -translate-y-1/2 items-center gap-x-3 rounded-md bg-light-primary px-3 px-5 py-2 py-3 text-xl text-white text-white transition-all duration-300 hover:bg-light-primary-hover"
           onClick={handleSearchRecipes}
         >
           <IoSearchSharp />
-        </Button>
+        </button>
       </div>
       <p className="mt-3 px-6 text-sm text-light-image-background sm:px-0">
         Search any recipe e g: burger. pizza. sandwich, toast.
